@@ -1,5 +1,17 @@
 <?php
 
+// Register menus
+
+function register_theme_menus() {
+  register_nav_menus(array(
+    'MAIN_NAV' => 'Header Navigation Menu'
+  ));
+}
+add_action('init', 'register_theme_menus');
+
+
+// Register custom blocks
+
 if (function_exists('acf_register_block_type')) {
   add_action('acf/init', 'register_acf_block_types');
 }
